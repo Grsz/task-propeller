@@ -1,0 +1,61 @@
+body{
+    padding: 10vw 20vw;
+    font-family: 'Montserrat', sans-serif;
+}
+.blocks{
+    width: 60vw;
+}
+
+
+
+h1{
+    font-size: 200%;
+    display: block;
+    font-weight: 700;
+    font-style: italic;
+    color: white;
+    flex: 1;
+}
+p{
+    margin: 1.5em;
+}
+img{
+    width: 3em;
+    height: 3em;
+    transition: transform ease .5s
+}
+
+
+
+.contentWrapper{
+    margin: 0;
+    border: 2px solid rgba(0, 0, 0, 0.11);
+    max-height: 0;
+    transition: all ease .5s;
+    overflow-y: hidden;
+}
+.visible{
+    max-height: 15em
+}
+
+
+
+.headingWrapper{
+    display: flex;
+    align-items: center;
+    height: 6em;
+    padding: 1em;
+    margin: .1em 0 0 0;
+    background-color: rgb(158, 56, 176);
+    border-bottom: .2em solid rgb(111, 39, 125);
+    user-select: none;
+    cursor: pointer;
+    transition: all ease .5s;
+}
+.open{
+    background-color: rgb(104, 68, 183);
+    border-bottom: .2em solid rgb(76, 49, 133);
+}
+.open img{
+    transform: rotate(180deg)
+}

@@ -1,18 +1,24 @@
 fetch('https://design.propcom.co.uk/buildtest/accordion-data.json')
     .then(res => res.json())
     .then(data => {
+
         const blocks = data.blocks;
-        const headings = document.querySelectorAll(".block > h1");
-        const paragraphs = document.querySelectorAll(".block > p")
+        const headingWrappers = document.querySelectorAll(".block > .headingWrapper");
+        const contentWrappers = document.querySelectorAll(".block > .contentWrapper");
+        const headings = document.querySelectorAll(".block > .headingWrapper > h1");
+        const contents = document.querySelectorAll(".block > .contentWrapper > p");
+
         blocks.forEach((block, i) => {
+
             const heading = document.createTextNode(block.heading);
-            const paragraph = document.createTextNode(block.content);
+            const content = document.createTextNode(block.content);
 
             headings[i].appendChild(heading);
-            paragraphs[i].appendChild(paragraph);
+            contents[i].appendChild(content);
 
-            headings[i].onclick = function(){
-                paragraphs[i].classList.toggle("visible")
+            headingWrappers[i].onclick = function(){
+                contentWrappers[i].classList.toggle("visible")
+                headingWrappers[i].classList.toggle("open")
             }
         });
     })
